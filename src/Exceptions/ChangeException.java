@@ -1,3 +1,4 @@
+package Exceptions;
 @SuppressWarnings("serial")
 public class ChangeException extends Exception {
 

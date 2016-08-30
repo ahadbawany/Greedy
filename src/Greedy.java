@@ -1,5 +1,9 @@
+
 import java.util.*;
 /* Name of the class has to be "Main" only if the class is public. */
+
+import Exceptions.ChangeException;
+import Exceptions.PayupException;
 
 class Greedy
 {
@@ -44,7 +48,7 @@ class Greedy
 		} 
 		
 		change = (int)((amount*100) - (cost*100)); //Convert to cents in order to make calculations possible. 
-												      // This is used to avoid floating point errors.
+												   // This is used to avoid floating point errors.
 
 		System.out.println("The value of the change is "+ change + " Cents");
 
