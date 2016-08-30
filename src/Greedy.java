@@ -35,14 +35,15 @@ class Greedy
 		double amount =s.nextDouble();
 		if (amount >= cost){
 			System.out.println("The Cost is $"+ cost );
+		}
 			
-		if (amount < cost){
+		else if (amount < cost){
 			s.close();
 			throw new PayupException("That isn't enough money, Payup!"); //Throw an Exception if your cost is greater than payment
 		}
 
 		System.out.println("The Amount Paid is $"+ amount );
-		if (amount - cost < 0.01){
+		if (amount - cost < 0.01 && (amount - cost) != 0 ){
 			s.close();
 			throw new ChangeException("The value of your change needs to exceed $0.01!"); //Throw an Exception if your Change < Penny
 		} 
@@ -82,6 +83,6 @@ class Greedy
 
 		}
 		} 
-	}
+	
 
 }
