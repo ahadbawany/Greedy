@@ -32,7 +32,7 @@ class Greedy
 		double cost = s.nextDouble();
 		if (cost < 0){
 			s.close();
-			throw new NegativeCostException("Your product needs to cost a positive value!");
+			throw new NegativeCostException("Your product needs to cost a positive value!"); //Throw an exception if value <0
 		}
 
 		System.out.println("Enter Amount paid in Dollars. ");
