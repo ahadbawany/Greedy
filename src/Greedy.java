@@ -3,13 +3,14 @@ import java.util.*;
 /* Name of the class has to be "Main" only if the class is public. */
 
 import Exceptions.ChangeException;
+import Exceptions.NegativeCostException;
 import Exceptions.PayupException;
 
 class Greedy
 {
 	
 	
-	public static void main (String[] args) throws PayupException, ChangeException {
+	public static void main (String[] args) throws PayupException, ChangeException, NegativeCostException {
 	double change; //The value of the change
 	
 //**********************************COIN VALUES!***********************************************************************************
@@ -29,6 +30,10 @@ class Greedy
 		System.out.println("Enter Cost in Dollars. ");
 
 		double cost = s.nextDouble();
+		if (cost < 0){
+			s.close();
+			throw new NegativeCostException("Your product needs to cost a positive value!");
+		}
 
 		System.out.println("Enter Amount paid in Dollars. ");
 
@@ -36,7 +41,7 @@ class Greedy
 		if (amount >= cost){
 			System.out.println("The Cost is $"+ cost );
 		}
-			
+		
 		else if (amount < cost){
 			s.close();
 			throw new PayupException("That isn't enough money, Payup!"); //Throw an Exception if your cost is greater than payment
